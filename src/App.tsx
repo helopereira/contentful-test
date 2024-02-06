@@ -14,7 +14,7 @@ export default function App (){
   
 
   return(
-      <div className='flex justify-center items-center flex-col gap-10 bg-pink-200 h-screen'>
+      <div className='flex justify-center items-center flex-col gap-10 bg-pink-200 h-screen font-mono'>
         <h1 className='font-black text-5xl text-pink-500'>✮ Idols Collection ✮</h1>
         <div className='flex flex-row gap-3 justify-center items-center flex-wrap'>
           {idols.map((items, i) => {
