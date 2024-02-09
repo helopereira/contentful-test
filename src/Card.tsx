@@ -4,7 +4,7 @@ const Card = ({ idols }) => {
     return (
       <div className={`
       flex bg-pink-400 border border-pink-400 rounded-md overflow-hidden
-      h-80 w-1/4 flex-row 
+      h-80  flex-row  w-[600px]
       `}>
         <div className='flex flex-row'> 
           <img  className='h-auto w-64' src={idols.foto.fields.file.url}/>
