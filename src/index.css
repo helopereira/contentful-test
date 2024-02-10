@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.botao:hover{
+  background-color: rgb(249 168 212);
+  cursor: pointer;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
