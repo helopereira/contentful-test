@@ -17,6 +17,7 @@ export default function App (){
   return(
       <div className='flex justify-center items-center flex-col gap-10 bg-pink-200 font-mono pb-10'>
         <Video video={video[0]}/>
+        {console.log(video[0])};
         <h1 className='font-black text-5xl text-pink-500'>✮ Idols Collection ✮</h1>
         <div className='flex flex-row gap-3 justify-center items-center flex-wrap'>
           {idols.map((idols) => {
