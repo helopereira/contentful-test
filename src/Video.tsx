@@ -7,6 +7,7 @@ const Video = ({ video }) => {
     const [paused, setPaused] = useState(false)
     const videoRef = useRef();
     const playPauseBtn = useRef();
+    const video_id = String(video?.videoId);
 
     let options = {
         root: null,
@@ -28,9 +29,9 @@ const Video = ({ video }) => {
         setPaused(true)
     }
     
-    let callback = (entries, observer) => {
+    const callback = (entries, observer) => {
         entries.forEach(entry => {
-            if(entry.target.id == 'video'){
+            if(entry.target.id == video_id){
                 if(entry.isIntersecting){
                     entry.target.play();
                     setPaused(false)
@@ -44,23 +45,21 @@ const Video = ({ video }) => {
         });
     }
 
-    let observer = new IntersectionObserver(callback, options);
+    const observer = new IntersectionObserver(callback, options);    
 
     useEffect (() => {
-        observer.observe(document.querySelector('#video'));
-    },[]);
+        observer.observe(document.getElementById(video_id) as HTMLElement);
+    });
 
     function redirect (){
         window.location.href=(video.link_botao)
     }
 
-    
-
     return (
         <div className={`
         relative w-100% min-h-screen flex justify-center
         `}>
-            <video ref={videoRef} id='video' className={`
+            <video ref={videoRef} id={video_id} className={`
             w-screen h-screen object-cover object-center 
             `} loop muted autoPlay  poster={video?.poster?.fields.file.url} src={video?.video.fields.file.url}/>
             <div className={`
